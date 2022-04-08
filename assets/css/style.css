@@ -22,13 +22,14 @@ main{
     border-image: linear-gradient(to right, #BFB577, #E1D4A4) 1;
     margin: 50px 50px 50px 50px;
     padding: 25px;
+    height: 80vh;
 }
 h1{
-    font-size: 5em;
+    font-size: 4em;
     text-shadow: 0 5px #FDF5F1;
     color: #34424F;
-    width: 800px;
-    height: 1.5em;
+    width: 80vh;
+    height: 2em;
     background-color: #E0CC95;
     display: flex;
     justify-content: center;
