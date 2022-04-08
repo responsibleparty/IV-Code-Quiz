@@ -1,0 +1,81 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+body{
+    background-image: url("../images/Twigs.jpeg");
+    background-repeat: repeat;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2em;
+    border-image: linear-gradient(to left, #BFB577, #E1D4A4) 1;
+}
+main{
+    border-style: solid;
+    border-width: 10px;
+    border-image: linear-gradient(to right, #BFB577, #E1D4A4) 1;
+    margin: 50px 50px 50px 50px;
+    padding: 25px;
+}
+h1{
+    font-size: 5em;
+    text-shadow: 0 5px #FDF5F1;
+    color: #34424F;
+    width: 800px;
+    height: 1.5em;
+    background-color: #E0CC95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 50px
+    
+}
+#time{
+    border-radius: 1px 10px;
+    background-color: #E0CC95;
+    width: 2em;
+    height: 1.5em;
+    font-size: 2em;
+    margin: 0;
+    padding: 5px;
+}
+#quizSection{
+    background-color: #FDF5F1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 5px 2px;
+    background-color: #E0CC95;
+    border-radius: 15px 50px
+}
+#quizQuestion{
+    font-size: 2em;
+    color: #34424F;
+}
+#quizQuestion-container{
+    font-size: 2.5em;
+    color: #E0CC95;
+    text-shadow: 0 0 1px #34424F;
+}
+#quizOptions{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+.option{
+    font-size: 1.5em;
+    text-align: left;
+    color: #E0CC95;
+    text-shadow: #34424F;
+}
+#controls{
+    display: flex;
+    justify-content: center;
+}
+.hide{
+    display: none;
+}
