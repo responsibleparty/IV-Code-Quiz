@@ -69,13 +69,8 @@ function beginGame(listOfQuestions) {
   startButton.classList.add("hide");
   setGameTimer();
   populateGameQuestions();
-  displayQuestion.textContent = 
-  console.log(displayQuestion);
 } 
 
-function generateRandomIndex(randomNumber){
-    return Math.floor(Math.random() * randomNumber);
-}
 
 function populateGameQuestions() {}
 
