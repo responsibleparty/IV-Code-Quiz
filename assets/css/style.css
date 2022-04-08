@@ -69,9 +69,10 @@ h1{
 }
 .option{
     font-size: 1.5em;
+    height: 50px;
     text-align: left;
-    color: #E0CC95;
-    text-shadow: #34424F;
+    color: #34424F;
+    text-shadow: #E0CC95;
 }
 #controls{
     display: flex;
