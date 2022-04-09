@@ -65,14 +65,16 @@ startButton.addEventListener("click", beginGame, setGameTimer);
 const displayQuestion = document.querySelector("#quizQuestion");
 const timeElement = document.querySelector("#time");
 
-function beginGame(listOfQuestions) {
+function beginGame() {
   startButton.classList.add("hide");
   setGameTimer();
   populateGameQuestions();
 } 
 
 
-function populateGameQuestions() {}
+function populateGameQuestions(listOfQuestions) {
+
+}
 
 // This function sets the initial time for the game
 var secondsLeft = 75;
@@ -88,7 +90,6 @@ function setGameTimer() {
     }
   }, 1000);
 }
-
 /*  WHEN USER CLICKS ON AN ANSWER
         1. Add or subtract score
         2. Add or subtract time
