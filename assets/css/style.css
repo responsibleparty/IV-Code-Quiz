@@ -3,7 +3,7 @@
     font-family: 'Dosis', sans-serif;
 }
 body{
-    background-image: url("./assets/images/twigs.jpg");
+    background-image: url("/assets/images/twigs.jpg");
     background-repeat: repeat;
     padding: 0;
     margin: 0;

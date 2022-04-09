@@ -62,18 +62,18 @@ const listOfQuestions = [
 // Will this return any values?
 const startButton = document.querySelector("#start");
 startButton.addEventListener("click", beginGame, setGameTimer);
-const displayQuestion = document.querySelector("#quizQuestion");
 const timeElement = document.querySelector("#time");
 
 function beginGame() {
   startButton.classList.add("hide");
   setGameTimer();
   populateGameQuestions();
+  const displayQuestion = document.querySelector("#quizQuestion");
+  displayQuestion.innerHTML = listOfQuestions[0];  
 } 
 
 
 function populateGameQuestions(listOfQuestions) {
-
 }
 
 // This function sets the initial time for the game
