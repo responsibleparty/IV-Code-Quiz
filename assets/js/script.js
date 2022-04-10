@@ -1,99 +1,125 @@
-// The array listOfQuestions is comprised of question objects
+// Links HTML startButton to the variable
+var startButton = document.querySelector("#startButton"); // Links HTML startButton to the variable
+    startButton.addEventListener("click", startGame); // Adds event listener, onclick will call startGame function
+var timeElement = document.querySelector("#time");
+var instructions = document.querySelector("#instructions");
+// Linking quizSection
+var quizQuestion = document.querySelector("#quizQuestion");
+var quizSection = document.querySelector("#quizSection");
+var option1 = document.querySelector(".option1");
+var option2 = document.querySelector(".option2");
+var option3 = document.querySelector(".option3");
+var option4 = document.querySelector(".option4");
+
+// Array of question OBJECTS
 const listOfQuestions = [
-  {
-    questionNumber: 0,
-    question: "Commonly used data types DO NOT include:",
-    answers: {
-      a: "Strings",
-      b: "Booleans",
-      c: "Alerts",
-      d: "Numbers",
+    {
+      questionNumber: 0,
+      question: "Commonly used data types DO NOT include:",
+      answers: {
+        a: "Strings",
+        b: "Booleans",
+        c: "Alerts",
+        d: "Numbers",
+      },
+      correctAns: "Alerts",
     },
-    correctAns: "c",
-  },
-  {
-    questionNumber: 1,
-    question: "The condition in an if/else statement is enclosed within_____.",
-    answers: {
-      a: "Quotes",
-      b: "Curly Brackets",
-      c: "Parentheses",
-      d: "Square Brackets",
+    {
+      questionNumber: 1,
+      question: "The condition in an if/else statement is enclosed within_____.",
+      answers: {
+        a: "Quotes",
+        b: "Curly Brackets",
+        c: "Parentheses",
+        d: "Square Brackets",
+      },
+      correctAns: "Parentheses",
     },
-    correctAns: "c",
-  },
-  {
-    questionNumber: 2,
-    question: "Arrays in JavaScript can be used to store:",
-    answers: {
-      a: "Numbers & Strings",
-      b: "Other Arrays",
-      c: "Booleans",
-      d: "All of the above",
+    {
+      questionNumber: 2,
+      question: "Arrays in JavaScript can be used to store:",
+      answers: {
+        a: "Numbers & Strings",
+        b: "Other Arrays",
+        c: "Booleans",
+        d: "All of the above",
+      },
+      correctAns: "All of the above",
     },
-    correctAns: "d",
-  },
-  {
-    questionNumber: 3,
-    question:
-      "String values must be enclosed within _____ when being assigned into variables.",
-    answers: {
-      a: "Commas",
-      b: "Curly Brackets",
-      c: "Quotes",
-      d: "Parentheses",
+    {
+      questionNumber: 3,
+      question:
+        "String values must be enclosed within _____ when being assigned into variables.",
+      answers: {
+        a: "Commas",
+        b: "Curly Brackets",
+        c: "Quotes",
+        d: "Parentheses",
+      },
+      correctAns: "Quotes",
     },
-    correctAns: "c",
-  },
-  {
-    questionNumber: 4,
-    question:
-      "A very useful tool used during development and debugging for printing content to the debugger is:",
-    answers: {
-      a: "JavaScript",
-      b: "Terminal/Bash",
-      c: "For Loops",
-      d: "console.log",
+    {
+      questionNumber: 4,
+      question:
+        "A very useful tool used during development and debugging for printing content to the debugger is:",
+      answers: {
+        a: "JavaScript",
+        b: "Terminal/Bash",
+        c: "For Loops",
+        d: "console.log",
+      },
+      correctAns: "console.log",
     },
-    correctAns: "d",
-  },
-];
+  ];
 
-// Will this return any values?
-const startButton = document.querySelector("#start");
-startButton.addEventListener("click", beginGame, setGameTimer);
-const timeElement = document.querySelector("#time");
+  // Initialize global variables
+  let totalScore = 0;
+  let arrayIndex=0;
+  let secondsLeft = 75;
 
-function beginGame() {
-  startButton.classList.add("hide");
-  setGameTimer();
-  populateGameQuestions();
-  const displayQuestion = document.querySelector("#quizQuestion");
-  displayQuestion.innerHTML = listOfQuestions[0];  
-} 
+  function startGame(){
+    quizSection.style.display = "block";
+    instructions.style.display = "none";
+    startButton.style.display = "none";
+    setGameTimer();
+    populateGameBoard();
+  }
 
+  function populateGameBoard(){
+      quizQuestion.innerHTML = listOfQuestions[arrayIndex].question;
+      option1.innerHTML = listOfQuestions[arrayIndex].answers.a;
+      option2.innerHTML = listOfQuestions[arrayIndex].answers.b;
+      option3.innerHTML = listOfQuestions[arrayIndex].answers.c;
+      option4.innerHTML = listOfQuestions[arrayIndex].answers.d;
 
-function populateGameQuestions(listOfQuestions) {
-}
+      return questionNumber;
+  }
 
-// This function sets the initial time for the game
-var secondsLeft = 75;
-function setGameTimer() {
-  // Sets interval in variable
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timeElement.textContent = secondsLeft + " seconds left.";
+  option1.addEventListener("click", showNextQuestion);
+  option2.addEventListener("click", showNextQuestion);
+  option3.addEventListener("click", showNextQuestion);
+  option4.addEventListener("click", showNextQuestion);
 
-    if (secondsLeft === 0) {
-      // Stops execution of action at set interval
-      clearInterval(timerInterval);
-    }
-  }, 1000);
-}
-/*  WHEN USER CLICKS ON AN ANSWER
-        1. Add or subtract score
-        2. Add or subtract time
-        3. Show the next card */
-// Populate the question and answers
-// Subtract time if answer is wrong
-// Calculate score
+  // Updates the arrayIndex
+  function showNextQuestion(){
+      let usersPick = this.textContent // Retrieves the letter picked by the user
+      if (usersPick === listOfQuestions[arrayIndex].correctAns){
+          currentScore = secondsLeft;
+      } else{
+          secondsLeft = secondsLeft - 15;
+          currentScore = secondsLeft;
+      }
+      arrayIndex++;
+      populateGameBoard()
+  }
+
+  function setGameTimer(){
+      let timeInterval = setInterval(function(){
+          secondsLeft--;
+          timeElement.textContent = secondsLeft + " seconds left!";
+          if (secondsLeft === 0){
+              // Stops execution of action at set interval
+              clearInterval(timeInterval);
+          }
+      }, 1000);
+  }
