@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Quiz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,31 +11,27 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="assets/js/script.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    <main>
-        <span class="time" id="time">Time</span>
-        <section class="instructions" id="instructions">
-            <h1>JavaScript Quiz</h1>
-            <p class="">This is a timed JavaScript quiz. For every wrong answer, your time will be deducted. Your final score will be your remaining time. Good luck, have fun!</p>
-        </section>
-        <section class="hide" id="quizSection">
-            <span id="quizQuestion">Question Goes Here</span>
-            <hr>
-            <section id="quizOptions">
-                <button class="options option1">Question</button>
-                <button class="options option2">Question</button>
-                <button class="options option3">Question</button>
-                <button class="options option4">Question</button>
-                <hr>
-            </section>
+    <section id="welcomeContent">
+        <h1 id="title">Quiz Time!</h1>
+            <div id="time"></div>
+            <p id="instructions">This is a quiz about Cecee. You have 75 seconds. Good luck!</p>
+        </h1>
+    </section>
+    
+    <section id="contentSection"> 
+        <section id="quizContent">
+
         </section>
         <section id="controls">
+            <button id="viewHighScoreButton">View High Score</button>
             <button id="startButton">Start</button>
-            <button class="hide" id="restart">Restart</button>
-            <button class="hide" id="clearHighScores">Clear High Scores</button>
         </section>
-    </main>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+    
 </body>
 </html>
