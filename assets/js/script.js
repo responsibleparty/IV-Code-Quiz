@@ -76,8 +76,6 @@ function beginGame() {
 }
 
 function setGameBoard() {
-  // pull from questions array - display question
-  // pull answers from same array + append each answer
   let answersOfThisQuestion = currentQuestion.answers;
   answersOfThisQuestion = shuffleAnswers(answersOfThisQuestion);
   console.log(answersOfThisQuestion);
