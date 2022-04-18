@@ -53,6 +53,11 @@ h1{
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+#quizContent button{
+    margin-left: 100px;
+}
+
 /* #instructions{
     display: flex;
     flex-direction: column;
